@@ -1,0 +1,8 @@
+cluster.name: es-learn
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+network.host: "0"
+http.max_content_length: 1g
+index.number_of_shards: 5
+index.number_of_replicas: 0
+path.repo: ["/var/elasticsearch/snapshot"]

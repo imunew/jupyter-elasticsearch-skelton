@@ -1,0 +1,16 @@
+elasticsearch:
+  build: ./docker/elasticsearch
+  ports:
+    - "9200:9200"
+    - "9300:9300"
+  volumes:
+    - ./docker/.volumes/elasticsearch:/usr/share/elasticsearch/data:rw
+
+jupyter:
+  build: ./docker/jupyter
+  links:
+    - elasticsearch
+  ports:
+    - "8888:8888"
+  volumes:
+    - ./docker/.volumes/jupyter:/home/jovyan/work:rw
